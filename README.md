@@ -39,10 +39,28 @@
 зачётных единиц, ступень высшего образования (бакалавриат, магистратура, 
 аспирантура), количество дисциплин, суммарное количество зачётных 
 единиц за дисциплины, состояние (редактируется, введён в действие).
-Методы: конструктор с шифром, названием, ФИО ответственного за план, 
+
+**Методы:** конструктор с шифром, названием, ФИО ответственного за план, 
 целевым количеством зачётных единиц, ступенью высшего образования; 
 установить и вернуть шифр; установить и вернуть название; установить и 
 вернуть ФИО ответственного, установить и вернуть целевое количество 
 зачётных единиц, установить и вернуть ступень высшего образования, 
 установить количество дисциплин и суммарное количество зачётных единиц 
 за них, вернуть состояние, ввести план в действие.
+
+## Тестовые данные и ожидаемые результаты 
+|Ввод|Ожидаемый результат|Фактический результат|Вывод|
+|--------|--------|--------|--------|
+|Enter your choice: 1<br>Enter curriculum code: 67890<br>Enter curriculum name: Computer<br>Enter responsible person's full name: Smith John Doe<br>Enter target number of credits (greater than 0): 128<br>Enter degree level (bachelor, master, postgraduate): bachelor<br>Enter number of disciplines: 12<br>Enter total number of credits for disciplines: 128|-|-|После ввода данных, программа не должна выводить никаких сообщений об ошибках.|
+|Enter curriculum code: ABCDE| Code must contain only digits and cannot be empty.| Code must contain only digits and cannot be empty.|УСПЕШНО!|
+|Enter curriculum name: 34234|Error: Name must contain only letters and cannot be empty.|Error: Name must contain only letters and cannot be empty.|УСПЕШНО!|
+|Enter responsible person's full name: 34234|Error: Full name must contain only letters and spaces.|Error: Full name must contain only letters and spaces.|УСПЕШНО!|
+|Enter target number of credits (greater than 0): sadad|Error: Enter an integer number:|Error: Enter an integer number:|УСПЕШНО!|
+|Enter degree level (bachelor, master, postgraduate): sdaf|Invalid degree level. Please enter 'bachelor', 'master', or 'postgraduate'.|Invalid degree level. Please enter 'bachelor', 'master', or 'postgraduate'.|УСПЕШНО!|
+|Enter number of disciplines: sdasd|Error: Enter an integer number:|Error: Enter an integer number:|УСПЕШНО!|
+|Enter total number of credits for disciplines: sadasd|Error: Enter an integer number:|Error: Enter an integer number:|УСПЕШНО!|
+|Enter your choice: 1<br>Enter curriculum code: 35<br>Enter curriculum name: Info<br>Enter responsible person's full name: Salagaeva Dasha Alex<br>Enter target<br>number of credits (greater than 0): 5<br>Enter degree level (bachelor, master, postgraduate): master<br>Enter number of disciplines: 5<br>Enter total number of credits for disciplines: 5<br>Enter your choice: 2|Curriculum Info activated.|Curriculum Info activated.|УСПЕШНО!|
+|Enter your choice: 1<br>Enter curriculum code: 34234<br>Enter curriculum name: Imba<br>Enter responsible person's full name: Das SDs sad<br>Enter target number of credits (greater than 0): 5<br>Enter degree level (bachelor, master, postgraduate): master<br>Enter number of disciplines: 4<br>Enter total number of credits for disciplines: 4<br>Enter your choice: 2|Error: Curriculum cannot be activated. Please check the data.|Error: Curriculum cannot be activated. Please check the data.|УСПЕШНО!|
+|Enter your choice: 1<br>Enter curriculum code: 3423<br>Enter curriculum name: dfsfds<br>Enter responsible person's full name: dsfds dfsdfsd dfsdf<br>Enter target number of credits (greater than 0): 4<br>Enter degree level (bachelor, master, postgraduate): master<br>Enter number of disciplines: 4<br>Enter total number of credits for disciplines: 4<br>Enter your choice: 2|Curriculum dfsfds activated.|Curriculum dfsfds activated.|УСПЕШНО!|
+
+## Проектирование свойств класса
